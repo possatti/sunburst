@@ -26,10 +26,13 @@ function BigIcon (props) {
 }
 
 function Detail (props) {
+  console.log('Detail.js location:', props.location);
+  console.log('Detail.js date:', props.date);
+  console.log('Detail.js data:', props.data);
   return (
     <MainContainer>
       <div className="container">
-        <Header location='Vila Velha' date='Saturday, 2016-01-01' />
+        <Header location={props.location} date={props.date} />
 
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
@@ -38,14 +41,16 @@ function Detail (props) {
                 <BigIcon icon="wi-night-sleet" />
               </div>
               <ul className="list-group">
-                <DataItem icon='wi-cloudy' label='Clear Sky' value=''/>
-                <DataItem icon='wi-thermometer' label='Min. Temperature:' value='70ºF'/>
-                <DataItem icon='wi-thermometer' label='Max. Temperature:' value='73ºF'/>
-                <DataItem icon='wi-humidity' label='Humidity:' value='90%'/>
+                <DataItem icon='wi-cloudy' label={props.data.weather[0].main} value='' />
+                <DataItem icon='wi-thermometer' label='Temperature:' value={props.data.main.temp + 'K'} />
+                <DataItem icon='wi-thermometer' label='Min. Temperature:' value={props.data.main.temp_min + 'K'} />
+                <DataItem icon='wi-thermometer' label='Max. Temperature:' value={props.data.main.temp_max + 'K'} />
+                <DataItem icon='wi-humidity' label='Pressure:' value={props.data.main.pressure} />
+                <DataItem icon='wi-humidity' label='Humidity:' value={props.data.main.humidity + '%'} />
+                <DataItem icon='wi-humidity' label='Wind Speed:' value={props.data.wind.speed} />
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </MainContainer>

@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 var Forecast = require('../components/Forecast');
 var Summary = require('../components/Summary');
 var ow = require('../utils/open-weather-api-helpers');
@@ -13,7 +15,7 @@ var ForecastContainer = React.createClass({
     }
   },
   componentDidMount: function () {
-    ow.getFiveDayForecast('Vila Velha, Brazil')
+    ow.getFiveDayForecast(this.props.params.location)
       .then(function (response) {
         // console.log('Weather: ', response);
         this.setState({
@@ -21,15 +23,6 @@ var ForecastContainer = React.createClass({
           forecast: response.data,
         });
       }.bind(this));
-  },
-  handleShowDetails: function (date) {
-    console.log('Show date:', date);
-    // this.context.router.push({
-    //   pathname: '/detail/' + this.state.location,
-    //   state: {
-    //     weatherData: this.state.playersInfo,
-    //   }
-    // })
   },
   render: function () {
     return (
@@ -40,10 +33,19 @@ var ForecastContainer = React.createClass({
               return unixtime(dayData.dt).getHours() === 9;
             })
             .map(function (dayData, i) {
-            return (
-                <Summary icon='wi-night-sleet' date={unixtime(dayData.dt)} key={i} />
-            )
-        })}
+              return (
+                <Link to={{
+                  pathname: '/detail/' + this.props.params.location + '/' + unixtime(dayData.dt).toISOString(),
+                  state: {
+                    weatherData: dayData,
+                    date: unixtime(dayData.dt),
+                  }
+                }} key={i} >
+                  <Summary icon='wi-night-sleet' date={unixtime(dayData.dt)} />
+                </Link>
+              )
+            }.bind(this))
+        }
       </Forecast>
     );
   }

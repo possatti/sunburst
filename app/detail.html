@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sunburst</title>
+  <link rel="shortcut icon" type="image/png" href="resources/img/favicon.png"/>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Weather Icons -->
+  <link rel="stylesheet" href="/home/possatti/projects/weather-app/app/resources/css/weather-icons.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="resources/css/custom.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Sunburst</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- Search form -->
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Your City">
+          </div>
+          <button type="submit" class="btn btn-default">Check Weather</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+    <div id="header">
+      <h1 id="location-title" class="text-center">Vila Velha</h1>
+      <h2 id="date-title" class="text-center">Saturday, 2016-01-01</h2>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+        <!-- Panel -->
+        <div class="panel panel-default">
+          <!-- Panel Header -->
+          <!-- <div class="panel-heading">
+            <h3 class="panel-title">Saturday, 2016-01-01</h3>
+          </div> -->
+          <!-- Panel Body -->
+          <div class="panel-body">
+            <!-- Icon -->
+            <div id="head-icon" class="text-center">
+              <i class="wi wi-night-sleet"></i>
+            </div>
+          </div>
+          <!-- Data -->
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <span class="cs-data-icon col-xs-1"><i class="wi wi-cloudy"></i></span>
+                <span class="cs-data-label col-xs-9">Clear Sky</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <span class="cs-data-icon col-xs-1"><i class="wi wi-thermometer"></i></span>
+                <span class="cs-data-label col-xs-7">Min. Temperature:</span>
+                <span class="cs-data col-xs-1">70ºF</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <span class="cs-data-icon col-xs-1"><i class="wi wi-thermometer"></i></span>
+                <span class="cs-data-label col-xs-7">Max. Temperature:</span>
+                <span class="cs-data col-xs-1">73ºF</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <span class="cs-data-icon col-xs-1"><i class="wi wi-humidity"></i></span>
+                <span class="cs-data-label col-xs-7">Humidity:</span>
+                <span class="cs-data col-xs-1">90%</span>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

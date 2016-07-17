@@ -1,0 +1,47 @@
+/*
+ * Custom CSS for the project.
+ */
+
+#header {
+  padding-bottom: 30px;
+}
+#location-title {
+  font-size: 50px;
+}
+#date-title {
+  font-size: 20px;
+  font-style: italic;
+}
+#head-icon {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 100px;
+}
+.icon {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 100px;
+  color: black;
+}
+.cs-date {
+  color: black;
+  /*font-size: 15px;*/
+  /*font-style: italic;*/
+  /*font-weight: normal;*/
+}
+.cs-data-icon {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.cs-data-label {
+  font-size: 20px;
+  font-weight: bold;
+}
+.cs-data {
+  font-size: 20px;
+}
+
+/* Modify Bootstrap components. */
+.jumbotron {
+  background: transparent;
+}

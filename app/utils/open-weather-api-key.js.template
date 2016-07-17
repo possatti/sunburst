@@ -1,0 +1,5 @@
+
+// Get you API Key here:
+//  - http://openweathermap.org/appid
+
+module.exports = 'XXXXXXXXXXXXXXXXXXXXXXXXXXX';

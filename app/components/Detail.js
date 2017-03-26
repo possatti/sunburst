@@ -41,13 +41,13 @@ function Detail (props) {
                 <BigIcon icon="wi-night-sleet" />
               </div>
               <ul className="list-group">
-                <DataItem icon='wi-cloudy' label={props.data.weather[0].main} value='' />
-                <DataItem icon='wi-thermometer' label='Temperature:' value={props.data.main.temp + 'K'} />
-                <DataItem icon='wi-thermometer' label='Min. Temperature:' value={props.data.main.temp_min + 'K'} />
-                <DataItem icon='wi-thermometer' label='Max. Temperature:' value={props.data.main.temp_max + 'K'} />
-                <DataItem icon='wi-humidity' label='Pressure:' value={props.data.main.pressure} />
-                <DataItem icon='wi-humidity' label='Humidity:' value={props.data.main.humidity + '%'} />
-                <DataItem icon='wi-humidity' label='Wind Speed:' value={props.data.wind.speed} />
+                <DataItem icon='wi-cloudy' label={props.weatherData.weather[0].main} value='' />
+                <DataItem icon='wi-thermometer' label='Temperature:' value={props.weatherData.main.temp + 'K'} />
+                <DataItem icon='wi-thermometer' label='Min. Temperature:' value={props.weatherData.main.temp_min + 'K'} />
+                <DataItem icon='wi-thermometer' label='Max. Temperature:' value={props.weatherData.main.temp_max + 'K'} />
+                <DataItem icon='wi-humidity' label='Pressure:' value={props.weatherData.main.pressure} />
+                <DataItem icon='wi-humidity' label='Humidity:' value={props.weatherData.main.humidity + '%'} />
+                <DataItem icon='wi-humidity' label='Wind Speed:' value={props.weatherData.wind.speed} />
               </ul>
             </div>
           </div>
@@ -58,7 +58,9 @@ function Detail (props) {
 }
 
 Detail.propTypes = {
-  // location: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  date: PropTypes.object.isRequired,
+  weatherData: PropTypes.object.isRequired,
 }
 
 module.exports = Detail;
